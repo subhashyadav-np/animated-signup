@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Neumorphic Login</title>
+    
+    <!--Using Fontawesome Offline Path If You Dont Have Internet-->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <!--Using Fontawesome Online Path If You Are On Internet-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <h2>Sign Up</h2>
+        <div class="step-navigation">
+            <div class="nav">
+                <div>Name</div>
+                <div>Contact</div>
+                <div>Birth</div>
+                <div>Submit</div>
+            </div>
+            <div class="line"></div>
+            <div class="nav-bar">
+                <div id="one">1</div>
+                <div id="two">2</div>
+                <div id="three">3</div>
+                <div id="four">4</div>
+            </div>
+        </div>
+        <div class="input-section-main">
+            <div class="name">
+                <h2>Enter Your Name:</h2>
+                <label>First Name</label>
+                <input class="input" type="text">
+                <label>Last Name</label>
+                <input class="input" type="text">
+                <div class="first-button-div">
+                    <button id="nameNextBtn">Next</button>
+                </div>
+            </div>
+            <div class="contact">
+                <h2>Contact Detail:</h2>
+                <label>Email Address</label>
+                <input class="input" type="email">
+                <label>Phone Number</label>
+                <input class="input" type="text">
+                <div class="button-div">
+                    <button id="contactPrevBtn">Prev</button>
+                    <button id="contactNextBtn">Next</button>
+                </div>
+            </div>
+            <div class="birth">
+                <h2>Birth Detail:</h2>
+                <label>Enter Your Birth Date</label>
+                <input class="input input-date" type="date">
+                <label>Enter Your Birth Nation</label>
+                <input class="input" type="text">
+                <div class="button-div">
+                    <button id="birthPrevBtn">Prev</button>
+                    <button id="birthNextBtn">Next</button>
+                </div>
+            </div>
+            <div class="submit">
+                <h2>Terms & Condition:</h2>
+                <ol>
+                    <li>This is a dummy text line.</li>
+                    <li>This is a dummy text line.</li>
+                    <li>This is a dummy text line.</li>
+                    <li>This is a dummy text line.</li>
+                    <li>This is a dummy text line.</li>
+                </ol>
+                <div class="condition-div">
+                    <input type="checkbox">
+                <label>Accept Terms & Conditions</label>
+                </div>
+                <div class="button-div">
+                    <button id="submitPrevBtn">Prev</button>
+                    <button id="btnSignUp">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="JQuery.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        //on click on next button of name div
+        $('#nameNextBtn').on('click', function(){
+            $('.name').addClass('done');
+            $('.contact').addClass('open');
+            $('#two').addClass('active');
+            $('.line').addClass('two');
+        });
+
+        //on click on prev button of contact div
+        $('#contactPrevBtn').on('click', function(){
+            $('.contact').removeClass('open');
+            $('.name').removeClass('done');
+            $('#two').removeClass('active');
+        });
+
+        //on click on next button of contact div
+        $('#contactNextBtn').on('click', function(){
+            $('.contact').addClass('done');
+            $('.birth').addClass('open');
+            $('#three').addClass('active');
+            $('.line').addClass('three');
+        });
+
+        //on click on prev button of birth div
+        $('#birthPrevBtn').on('click', function(){
+            $('.birth').removeClass('open');
+            $('.contact').removeClass('done');
+            $('#three').removeClass('active');
+        });
+
+        //on click on next button of birth div
+        $('#birthNextBtn').on('click', function(){
+            $('.birth').addClass('done');
+            $('.submit').addClass('open');
+            $('#four').addClass('active');
+            $('.line').addClass('four');
+        });
+
+        //on click on prev button of submit div
+        $('#submitPrevBtn').on('click', function(){
+            $('.submit').removeClass('open');
+            $('.birth').removeClass('done');
+            $('#four').removeClass('active');
+        });
+
+    });
+</script>
+
+</body>
+</html>
